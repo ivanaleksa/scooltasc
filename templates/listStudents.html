@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <head>
+            <link rel="stylesheet" href="{% static 'css/listStudents.css' %}">
+    </head>
+    <style>
+        body{
+            background: linear-gradient(45deg, PaleTurquoise , LightCyan);
+        }
+    </style>
+    <div style="background:white; margin-left:100px; margin-right:100px; box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5); border-radius: 10px; ">
+        <div align="center" style="margin-top:100px; font-size:30px">В этом разделе ты можешь посмотреть своё место в рейтинге,</br>а также за что именно были поставленны баллы.</div>
+        <div style="margin-top:50px; margin-left:350px; margin-right:100px;">
+            <ul class="list3a">
+                {% for student in students %}
+                    <li><font color="blue">Баллы:{{ student.balls }}</font> - <a href="{% url 'studentdetail' student.id %}" style="color:black">{{ student.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

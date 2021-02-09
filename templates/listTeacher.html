@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <head>
+        <style>
+            #glaw{
+              width:1100px;
+            }
+            .blok1{
+              background:white;
+              float:left;
+              margin:3px 3px 3px 5px;
+              width:300px;
+              height:300px;
+              padding: 5px;
+              text-align: center;
+              border-radius: 4px;
+              box-shadow: rgba(0,0,0,1.2) 0px 1px 3px;
+            }
+        </style>
+    </head>
+    <div style=" background:white;">
+        <style>
+            body{
+                background: linear-gradient(45deg, PaleTurquoise , LightCyan);
+            }
+        </style>
+    <div style=" background:white;">
+        <div id="glaw" style="margin-top:200px; margin:130px; background:white;" align="center">
+         {% for teacher in teacher%}
+            <div class="blok1">
+                <h3>{{ teacher.name }}</h3>
+                   <p>{{ teacher.rang }}</p>
+                    <img class="alignright size-full wp-image-533"
+                    src="{{ teacher.photo.url }}"
+                    align="center" width="150" height="200"  style="margin-top:10px"/>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

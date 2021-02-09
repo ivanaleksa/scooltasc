@@ -1,0 +1,23 @@
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+text-align: center;
+border-collapse: collapse;
+border-spacing: 5px;
+background: #AFEEEE;
+border-radius: 20px;
+box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+}
+th {
+font-size: 22px;
+font-weight: 300;
+padding: 12px 10px;
+border-bottom: 2px solid #00BFFF;
+color: #000080;
+}
+tbody tr:nth-child(2) {
+border-bottom: 2px solid #00BFFF;
+}
+td {
+padding: 10px;
+color: #191970;
+}

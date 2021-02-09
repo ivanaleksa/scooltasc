@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+</head>
+        <style>
+            body{
+                background: linear-gradient(45deg, PaleTurquoise , LightCyan);
+            }
+        </style>
+            <ul class="list2b" style="margin-top:100px;">
+            {% for class in klas %}
+                <li><a href="{% url 'schedule:DetailSchedule' class.id %}"><div style="font-size:50px;"><b>{{ class.class_of_lesson }}</b></div></div></a></li>
+            {% endfor %}
+            </ul>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/table.css' %}">
+</head>
+<div style="margin-top:100px;" align="center">
+    <table>
+        <tr><th colspan="5">Расписание уроков {{ schedule.class_of_lesson }}</th></tr>
+             <tr>
+                  <td>Понедельник</td>
+                  <td>Вторник</td>
+                  <td>Среда</td>
+                  <td>Четверг</td>
+                  <td>Пятница</td>
+                    <td>Суббота</td>
+             </tr>
+            <tr>
+                  <td>{{ schedule.first_lesson_monday }}</td>
+                  <td>{{ schedule.first_lesson_tuesday }}</td>
+                  <td>{{ schedule.first_lesson_wednesday }}</td>
+                  <td>{{ schedule.first_lesson_thursday }}</td>
+                  <td>{{ schedule.first_lesson_friday }}</td>
+                <td>{{ schedule.first_lesson_saturday }}</td>
+            </tr>
+            <tr>
+                  <td>{{ schedule.two_lesson_monday }}</td>
+                  <td>{{ schedule.two_lesson_tuesday }}</td>
+                  <td>{{ schedule.two_lesson_wednesday }}</td>
+                  <td>{{ schedule.two_lesson_thursday }}</td>
+                  <td>{{ schedule.two_lesson_friday }}</td>
+                <td>{{ schedule.two_lesson_saturday }}</td>
+            </tr>
+            <tr>
+                  <td>{{ schedule.free_lesson_monday }}</td>
+                  <td>{{ schedule.free_lesson_tuesday }}</td>
+                  <td>{{ schedule.free_lesson_wednesday }}</td>
+                  <td>{{ schedule.free_lesson_thursday }}</td>
+                  <td>{{ schedule.free_lesson_friday }}</td>
+                <td>{{ schedule.free_lesson_saturday }}</td>
+            </tr>
+            <tr>
+                  <td>{{ schedule.four_lesson_monday }}</td>
+                  <td>{{ schedule.four_lesson_tuesday }}</td>
+                  <td>{{ schedule.four_lesson_wednesday }}</td>
+                  <td>{{ schedule.four_lesson_thursday }}</td>
+                  <td>{{ schedule.four_lesson_friday }}</td>
+                    <td>{{ schedule.four_lesson_saturday }}</td>
+            </tr>
+          <tr>
+              <td>{{ schedule.five_lesson_monday }}</td>
+              <td>{{ schedule.five_lesson_tuesday }}</td>
+              <td>{{ schedule.five_lesson_wednesday }}</td>
+              <td>{{ schedule.five_lesson_thursday }}</td>
+              <td>{{ schedule.five_lesson_friday }}</td>
+              <td>{{ schedule.five_lesson_saturday }}</td>
+          <td colspan="3"></td>
+        </tr>
+                  <tr>
+              <td>{{ schedule.six_lesson_monday }}</td>
+              <td>{{ schedule.six_lesson_tuesday }}</td>
+              <td>{{ schedule.six_lesson_wednesday }}</td>
+              <td>{{ schedule.six_lesson_thursday }}</td>
+              <td>{{ schedule.six_lesson_friday }}</td>
+              <td>{{ schedule.six_lesson_saturday }}</td>
+          <td colspan="3"></td>
+        </tr>
+        <tr>
+              <td>{{ schedule.seven_lesson_monday }}</td>
+              <td>{{ schedule.seven_lesson_tuesday }}</td>
+              <td>{{ schedule.seven_lesson_wednesday }}</td>
+              <td>{{ schedule.seven_lesson_thursday }}</td>
+              <td>{{ schedule.seven_lesson_friday }}</td>
+              <td>{{ schedule.seven_lesson_saturday }}</td>
+          <td colspan="3"></td>
+        </tr>
+
+    </table>
+</div>
+<div style="margin-top:50px;" align="center">
+<table >
+    <tr><th>Расписание звонков</th>
+    <tr><td>1 урок  {{ schedule.start_firts_lesson_monday }} - {{ schedule.end_firts_lesson_monday }}</td></tr>
+    <tr><td>2 урок  {{ schedule.start_two_lesson_monday }} - {{ schedule.end_two_lesson_monday }}</td></tr>
+    <tr><td>3 урок  {{ schedule.start_free_lesson_monday }} - {{ schedule.end_free_lesson_monday }}</td></tr>
+    <tr><td>4 урок  {{ schedule.start_four_lesson_monday }} - {{ schedule.end_four_lesson_monday }}</td></tr>
+    <tr><td>5 урок  {{ schedule.start_five_lesson_monday }} - {{ schedule.end_five_lesson_monday }}</td></tr>
+    <tr><td>6 урок  {{ schedule.start_six_lesson_monday }} - {{ schedule.end_six_lesson_monday }}</td></tr>
+    <tr><td>7 урок  {{ schedule.start_seven_lesson_monday }} - {{ schedule.end_seven_lesson_monday }}</td></tr>
+</table>
+</div>
+{% endblock %}

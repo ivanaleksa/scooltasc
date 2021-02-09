@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <head>
+        <style>
+                        #glaw{
+              margin:auto;
+              width:1300px;
+            }
+            .blok1{
+              background:white;
+              float:left;
+              margin:3px 3px 3px 5px;
+              width:300px;
+              height:300px;
+              padding: 5px;
+              text-align: center;
+              border-radius: 4px;
+              box-shadow: rgba(0,0,0,1.2) 0px 1px 3px;
+            }
+            .blok1:hover{
+                box-shadow:
+                        1px 1px #00CED1,
+                        2px 2px #00CED1,
+                        3px 3px #00CED1,
+                        4px 4px #00CED1,
+                        5px 5px #00CED1,
+                        6px 6px #00CED1,
+                        7px 7px #00CED1;
+                      -webkit-transform: translateX(-7px);
+                      transform: translateX(-7px);
+            }
+        </style>
+        <link rel="stylesheet" href="{% static 'css/listNews.css' %}">
+    </head>
+    <div class="photobg" style="padding-bottom:50px; padding-top:100px;">
+        <p style="margin-top:100px; font-size:100px; margin-left:10px;">Трекер школы №49</p>
+        <p style="margin-left:20px;margin-top:30px;font-size:30px;">Узнавай расписание, своё место в рейтинге и самые свежие новости твоей школы!</p>
+    </div>
+    <div>
+        <p style="margin-left:20px;margin-top:30px;font-size:30px;">Новости школы</p>
+ <img src="https://cdn-nus-1.pinme.ru/tumb/600/photo/d2/5a/d25a2186f4201ca85545ae4f9a9a8efb.gif" align="right" style="margin-top:-100px">
+            {% for new in newlist %}
+        <a href="{% url 'detail' new.pk %}">
+        <div class="blok1" style="margin:20px; margin-top:30px;" width="50%">
+            <p style="color:black; font-size:30px;"><b>{{ new.title }}</b></p>
+            <img src="media/znak.png">
+
+        </div>
+        </a>
+            {% endfor %}
+    </div>
+        <div class="container">
+  <section style="height:80px;"></section>
+  <div class="row" style="text-align:center; width:100%;">
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>body{background: linear-gradient(45deg, PaleTurquoise , LightCyan);}</style>
+    <div style="background: white; box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5); margin-left:300px; margin-right:300px; border-radius: 10px; padding:10px;">
+        <div align="center" style="margin-top:100px"><img src="{{ student.photo.url }}" width="300" height="400"></div>
+        <div style="font-size:40px;" align="center"><b>{{ student.name }}</b></div>
+        <div style="font-size:30px; margin-top:30px;" align="center">{{ student.achivement }}</div>
+        <div style="font-size:30px; margin-top:20px;" align="center"><font color="blue">Классный руководитель -</font>  {{ student.teacher_of_class }}</div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+            <meta charset="UTF-8">
+            <title>Школьный трекер</title>
+            <link rel="stylesheet" href="{% static 'css/cssForHeader.css' %}">
+            <link rel="shortcut icon" href=" media/ico.png" type="image/png">
+    </head>
+    <body>
+        <nav role='navigation'>
+              <ul>
+                    <a href="">
+                        {% if user.is_authenticated %}
+                            <li><p>Привет <font color="blue">{{ user.username }}</font>!</p></a></li>
+                            <li><a href="/admin">Админ.панель</a></li>
+                            <li><p><a href="{% url 'logout' %}"><font color="red">Выйти</font></a></p></li>
+                        {% else %}
+                            <a><li><p></p></li></a>
+                            <li><a href="/accounts/login/" style="color:blue;">Вы не вошли. Вход</a></li>
+                        {% endif %}
+                    </a>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/student">Гонка</a></li>
+                    <li><a href="/teachers">Учителя</a></li>
+                    <li><a href="/schedule">Расписание</a></li>
+
+              </ul>
+        </nav>
+        {% block content %}{% endblock %}
+    </body>
+</html>
